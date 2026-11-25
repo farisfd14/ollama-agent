@@ -132,7 +132,7 @@ def run_agent(user_message: str) -> str:
                 args = json.loads(args)
             print(f"  [tool call] {name}({args})")
             try:
-                result = TOOLS[name][0](args)
+                result = TOOLS[name](args)
             except Exception as error:
                 result = f"tool failed: {error}"
             messages.append({"role": "tool",
