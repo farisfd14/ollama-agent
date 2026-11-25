@@ -2,7 +2,7 @@
 # Milestone 2: agent with THREE tools: stocks, math, my notes.
 #
 # The loop is unchanged (it's always the same loop):
-#   send chat+tools -> model asks for a tool -> we run it -? feed result
+#   send chat+tools -> model asks for a tool -> we run it -> feed result
 #   back -> repeat until the model answers with plain text.
 
 import json
@@ -44,7 +44,7 @@ def search_notes(args: dict) -> str:
     return "\n---\n".join(parts)
 
 
-# name -> pythin function. Descriptions live in TOOL_SCHEMA below.
+# name -> python function. Descriptions live in TOOL_SCHEMA below.
 TOOLS = {
     "get_stock_price": get_stock_price,
     "calculator": calculator,
